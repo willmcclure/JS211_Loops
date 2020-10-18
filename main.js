@@ -34,7 +34,7 @@
         {
             firstName: "Jane",
             lastName: "Doe",
-            birthDate: "Jan 5, 1991",
+            birthDate: "Jan 5, 2001",
             gender: "female"
         }, 
         {
@@ -48,9 +48,10 @@
 // 6) Create a function that uses a for...of loop and an if statement to console.log the value 
 // associated with the key birthDate of each object if the birth year is an odd number.
 
-    for (i = 0; i < arrayOfPersons.length; i++) {
-        if(arrayOfPersons.filter(person => person.birthDate == "Jan 5, 1991")){
-            console.log("This is a fun game!")
+    for (const person of arrayOfPersons) {
+        const birthYear = Number(person.birthDate.slice(-4))
+        if((birthYear %2 !== 0)){
+            console.log(person.firstName,"has an odd year birthday. It is", person.birthDate)
         }
     }
 
@@ -70,35 +71,22 @@
 
 // 9) Create a function that returns true if the value of birthDate is before Jan 1, 1990.
 
+    let x = arrayOfPersons.map(person => {
+        const birthYear = Number(person.birthDate.slice(-4));
+        if(birthYear < 1990){
+            return true
+        } 
+        return false
+    })
 
-
-    // const w = arrayOfPersons.filter(person => person.birthDate == "March 10, 1948");
+    console.log("The game is", x)
     
-    // // should return Dan
-    // console.log("The birthDate is:", w);
-
-    // const newResult = arrayOfPersons.filter(function(a,b){
-    //     // Turn your strings into dates, and then subtract them
-    //     // to get a value that is either negative, positive, or zero.
-    //     return new Date(b.date) - new Date(a.date);
-    // });
-
-    // console.log("Year result =", newResult)
 
 // 10) Use .filter() to filter the arrayOfPersons and console.log only people that were born before Jan 1, 1990.
 
-//     const l = arrayOfPersons.filter(person => person.birthDate === "March 10, 1986")
-
-//     console.log("The birthday is before January 1st, 1990", l)
-
-//     let compare_dates = function(date1,date2){
-//         if (date1>date2) return ("Date1 > Date2");
-//         else if (date1<date2) return ("Date2 > Date1");
-//         else return ("Date1 = Date2"); 
-//      }
-   
-//    console.log(compare_dates(new Date(arrayOfPersons.birthDate[0]), new Date(arrayOfPersons.birthDate[1])));
-//    console.log(compare_dates(new Date('11/14/2013 00:01'), new Date('11/14/2013 00:00')));
-//    console.log(compare_dates(new Date('11/14/2013 00:00'), new Date('11/14/2013 00:01')));
-
-    
+    let m = arrayOfPersons.map(person => {
+        const birthYear = Number(person.birthDate.slice(-4));
+        if(birthYear < 1990){
+            console.log(person)
+        } 
+    })
