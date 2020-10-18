@@ -1,7 +1,7 @@
 // 1) Use a do...while loop to console.log the numbers from 1 to 1000.
 // 2) Create an object (with keys and values) called person:
 
-    let person = [{
+    const person = [{
         firstName: "Jane",
         lastName: "Doe",
         birthDate: "Jan 5, 1925",
@@ -18,11 +18,11 @@
 // 5) Create an arrayOfPersons that contains multiple "people" objects. You can simply copy/paste the person object you made above multiple times. 
 // Feel free to change the values to reflect multiple people you might have in your database.
 
-    let arrayOfPersons = [
+    const arrayOfPersons = [
         {
             firstName: "Jane",
             lastName: "Doe",
-            birthDate: "Jan 5, 1925",
+            birthDate: "Jan 5, 1991",
             gender: "female"
         }, 
         {
@@ -35,20 +35,30 @@
 
 // 6) Create a function that uses a for...of loop and an if statement to console.log the value associated with the key birthDate of each object if the birth year is an odd number.
 
-    console.log(arrayOfPersons.birthDate[0])
 
 // 7) Use .map() to map over the arrayOfPersons and console.log() their information.
-    console.log(arrayOfPersons.map(person => person.length >= 0))
+    let x = arrayOfPersons.map(person => person.length > 1)
+    console.log("Mapping info is", x)
 
 // 8) Use .filter() to filter the persons array and console.log only males in the array.
 
-
-   const result = arrayOfPersons.filter(person => person.gender.length < 5)
-
-   console.log(result)
+//    const result = arrayOfPersons.filter(person => person.gender.length < 5);
+    
+//    // should return Dan
+//    console.log(result);
 
 // 9) Create a function that returns true if the value of birthDate is before Jan 1, 1990.
 
-// 10) Use .filter() to filter the persons array and console.log only people that were born before Jan 1, 1990.
+    // const newResult = arrayOfPersons.sort(function(a,b){
+    //     // Turn your strings into dates, and then subtract them
+    //     // to get a value that is either negative, positive, or zero.
+    //     return new Date(b.date) - new Date(a.date);
+    // });
 
+    // console.log("Year result =", newResult)
 
+// 10) Use .filter() to filter the arrayOfPersons and console.log only people that were born before Jan 1, 1990.
+
+    // const newestResult = arrayOfPersons.filter(({ birthDate }) => birthDate.slice(-10) > 1990);
+
+    // console.log("My newest result is", newestResult)
